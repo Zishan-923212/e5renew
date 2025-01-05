@@ -37,14 +37,7 @@ jobs:
     - name: Test Api #ApiCall
       run: | 
         echo `date +"%Y-%m-%d %H:%M:%S"` begin > time.log
-        python3 temp.py
-    - name: Delete secrets config #Delete secret config
-      run: | 
-        rm -f temp.py
-        rm -f configid.txt
-        rm -f configkey.txt
-        rm -f refreshtoken.txt
-        rm -f Secret.txt
+        python3 main.py
     - name: Commit #Upload a new refresh_token to the repository
       run: |
         git config --global user.email kjmcabangon@slsu.edu.ph
